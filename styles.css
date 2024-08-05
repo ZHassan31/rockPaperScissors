@@ -1,40 +1,48 @@
-.target{
-    margin-bottom: 200px;
+:root {
+    --margin-rem: 1rem;
+    --border-rem: 0.5rem;
+    --height-vh: 12vh;
+    --width-vw: 10vw;
 }
-button{
-    margin: 1rem;
-    border: 5px solid black;
-    padding: 0;
-    
-}
-img {
-    height: 12vh;
-    width: 10vw;
-    background-color: white;
 
+.target {
+    margin-bottom: var(--margin-rem);
+}
+
+button {
+    margin: var(--margin-rem);
+    border: var(--border-rem) solid black;
+    padding: 0;
+}
+
+img {
+    height: var(--height-vh);
+    width: var(--width-vw);
+    background-color: white;
 }
 
 .box {
     background: linear-gradient(-90deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
     animation: gradient 15s ease infinite;
-    height: 12vh;
-    width: 10vw;
+    height: var(--height-vh);
+    width: var(--width-vw);
 }
 
-@keyframes gradient02 {
+@keyframes gradient {
     0% {
         background-position: 0% 50%;
     }
- 
+
     50% {
         background-position: 100% 50%;
     }
- 
+
     100% {
         background-position: 0% 50%;
     }
 }
+
 body {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background-size: 400% 400%;
@@ -42,23 +50,9 @@ body {
     height: 100vh;
 }
 
-@keyframes gradient {
-    0% {
-        background-position: 0% 50%;
-    }
- 
-    50% {
-        background-position: 100% 50%;
-    }
- 
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 .container {
-    flex-direction: column;
     display: flex;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-evenly;
     align-items: center;
@@ -68,8 +62,6 @@ body {
 }
 
 .container>* {
-    margin: -400px;
-    /* Adjust margin between elements */
-    padding: 0px;
-    /* Adjust padding within elements */
+    margin: -4em;
+    padding: 0;
 }
