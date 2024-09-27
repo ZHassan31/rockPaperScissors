@@ -1,9 +1,11 @@
 $(document).ready(function () {
     // Select the button and the element to hide
-    document.querySelector('.choices').addEventListener('click', function () {
-        // Hide the element with the ID 'intro'
-        document.getElementById('intro').style.display = 'none';
+    $(document).ready(function () {
+        $('.choices').on('click', function () {
+            $('#intro').hide(); // jQuery method to hide
+        });
     });
+
 
     let choiceArray = ["", "paper", "rock", "scissors"];
     let verdict;
