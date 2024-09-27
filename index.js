@@ -1,10 +1,16 @@
 $(document).ready(function () {
+    // Select the button and the element to hide
+    document.querySelector('.choices').addEventListener('click', function () {
+        // Hide the element with the ID 'intro'
+        document.getElementById('intro').style.display = 'none';
+    });
+
     let choiceArray = ["", "paper", "rock", "scissors"];
     let verdict;
     let AI;
     let randomNumber
-    let playerCount=0
-    let computerCount=0
+    let playerCount = 0
+    let computerCount = 0
     function getRandomChoice() {
         randomNumber = (Math.floor(Math.random() * 3)) + 1;
         AI = choiceArray[randomNumber];
@@ -12,9 +18,9 @@ $(document).ready(function () {
     function winner() {
         if (verdict === AI) {
             // It's a draw
-        } else if ((verdict === "rock" && AI === "scissors") || 
-                   (verdict === "paper" && AI === "rock") || 
-                   (verdict === "scissors" && AI === "paper")) {
+        } else if ((verdict === "rock" && AI === "scissors") ||
+            (verdict === "paper" && AI === "rock") ||
+            (verdict === "scissors" && AI === "paper")) {
             // Player wins
             playerCount++;
         } else {
@@ -35,11 +41,15 @@ $(document).ready(function () {
             } else {
                 $("#winner").text("You Lost");
             }
+            //sleep for 5 seconds then refresh the page
+            setTimeout(function () {
+                location.reload();
+            }, 1200);
             // Reset the game
             playerCount = 0;
             computerCount = 0;
         }
-        else{
+        else {
             $("#winner").text("");
         }
     }

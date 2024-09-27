@@ -66,4 +66,7 @@ body {
     padding: 0;
 }
 
-/* hello */
+/* Hides #intro when the button with class .choices is clicked */
+.choices:focus:has(+ #intro)+#intro {
+    display: none;
+}
